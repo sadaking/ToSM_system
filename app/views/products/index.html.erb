@@ -1,4 +1,4 @@
-<div class="bg-light">
+<div class="bg-white">
   <div class="carousel">
     <% @products.shuffle.first(6).each do |product|%>
       <div class="card">
@@ -12,7 +12,7 @@
             <div class="example">
               <div class="box">
                 <%= link_to producer_path(product.producer.id) do%>
-                  <%= product.producer.producer_name %>
+                  <%= product.farm_name %>
                 <% end %>
               </div>
               <% if product.producer.producer_avatar.attached? %>
@@ -42,11 +42,11 @@
   </div>
 
   <div class="container bg-white">
-    <div class="text-center text-primary" style="margin-bottom:30px;">
+    <div class="text-center" style="margin-bottom:30px;">
       <% if current_user.try(:admin?) %>
-        <h2 class="home_title text-primary">商品一覧(管理者用)</h2>
+        <h2 class="home_title　text-light">不良不動在庫一覧(管理者用)</h2>
       <% else %>
-        <h2 class="home_title text-primary">商品一覧</h2>
+        <h2 class="home_title text-light">不良・不動在庫 一覧</h2>
       <% end %>
     </div>
 
@@ -54,9 +54,15 @@
       <div class="form-group float-left">
         <%= form_with(url:products_path, local: true, method: :get) do |form| %>
           <%= form.label :title_search, class: "text-primary" do %>
-            <i class="fas fa-leaf"> タイトル検索</i>
+            <i class="fas fa-leaf"> 疾患から探す</i>
           <% end %><br/>
           <%= form.text_field :title ,class:"form-control"%><br/>
+
+          <%= form.label :title_search, class: "text-primary" do %>
+            <i class="fas fa-leaf"> 会社から探す</i>
+          <% end %><br/>
+          <%= form.text_field :title ,class:"form-control"%><br/>
+
           <%= form.label :label_id_search, class: "text-primary" do %>
             <i class="fas fa-tags"> ラベル検索</i>
           <% end %><br/>
@@ -77,26 +83,11 @@
                   <div class="example">
                     <div class="box">
                       <%= link_to producer_path(product.producer.id) do%>
-                        <%= product.producer.producer_name %>
+                        <%= product.farm_name %>
                       <% end %>
                     </div>
-                    <% if product.producer.producer_avatar.attached? %>
-                      <% if product.quantity == 0%>
+                    <% if product.quantity == 0%>
                       <p>soldout</p>
-                          <%= image_tag product.producer.producer_avatar.variant(combine_options:{gravity: :center,
-                                                                          border:'2',
-                                                                          resize:"50x95^",
-                                                                          crop:"100x100+0+0"}).processed,
-                                                                          class: "img border-primary"
-                                                                          %>
-                      <% else %>
-                      <%= image_tag product.producer.producer_avatar.variant(combine_options:{gravity: :center,
-                                                                      border:'2',
-                                                                      resize:"50x95^",
-                                                                      crop:"100x100+0+0"}).processed,
-                                                                      class: "img border-primary"
-                                                                      %>
-                      <% end %>
                     <% end %>
                   </div>
                   <td>
@@ -124,6 +115,14 @@
             </tr>
           <% end %>
         </div>
+      </div>
+    </div>
+    <div class="text-center text-light" style="margin-bottom:30px;">
+      <h2 class="home_title">近隣薬局情報</h2>
+    </div>
+    <div class="row">
+      <div class="col">
+        <iframe class="mx-auto d-block" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.98389584528!2d139.80445461507182!3d35.751200580177986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e4ee5bcbe4f%3A0xc7772b5aa6e9021e!2z44GC44GK44Gw6Kq_5Ymk6Jas5bGA!5e0!3m2!1sja!2sjp!4v1602291832187!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
     </div>
     <div class="my-4 mx-auto" style="width: 200px;">
