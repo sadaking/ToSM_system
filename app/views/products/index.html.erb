@@ -51,7 +51,7 @@
     </div>
 
     <div class="row">
-      <div class="form-group float-left">
+      <div class="form-group col-sm-4">
         <%= form_with(url:products_path, local: true, method: :get) do |form| %>
           <%= form.label :title_search, class: "text-primary" do %>
             <i class="fas fa-leaf"> 疾患から探す</i>
@@ -75,7 +75,7 @@
         <div class="row">
           <% @products.each do |product|%>
             <tr>
-              <div class="card ml-2 mb-2 mr-2 rounded border-primary" style="width: 13rem;">
+              <div class="card ml-2 mb-2 mr-2 rounded border-primary" style="width: 45%;">
                 <% if product.image.attached? %>
                   <td><%= image_tag product.image.variant(combine_options:{gravity: :center,border:'2', resize:"180x180^",crop:"220x220+0+0"}).processed ,class: "rounded"%></td>
                 <% end %>
@@ -122,7 +122,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <iframe class="mx-auto d-block" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.98389584528!2d139.80445461507182!3d35.751200580177986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e4ee5bcbe4f%3A0xc7772b5aa6e9021e!2z44GC44GK44Gw6Kq_5Ymk6Jas5bGA!5e0!3m2!1sja!2sjp!4v1602291832187!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe class="mx-auto d-block" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.98389584528!2d139.80445461507182!3d35.751200580177986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e4ee5bcbe4f%3A0xc7772b5aa6e9021e!2z44GC44GK44Gw6Kq_5Ymk6Jas5bGA!5e0!3m2!1sja!2sjp!4v1602291832187!5m2!1sja!2sjp" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
     </div>
     <div class="my-4 mx-auto" style="width: 200px;">

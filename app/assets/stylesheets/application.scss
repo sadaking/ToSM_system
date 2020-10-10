@@ -9,9 +9,10 @@
   }
 }
 
-.nav-item{
-  font-size: 1.3rem;
+.nav .fas{
+  font-size: 28px;
 }
+
 .wrapper{
   width:100%;
   padding-top: 20px;
@@ -163,7 +164,7 @@
 
 
 $theme-colors: (
-  "primary": #996633,
+  "primary": #5399F9,
   "info": #003399,
   "danger": #ff4136,
   "success": #FFDEAD,
