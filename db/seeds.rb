@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Label.create([
-    { name: "新鮮" },
-    { name: "送料無料" },
-    { name: "予約" },
+    { name: "30%OFF" },
+    { name: "50%OFF" },
+    { name: "70%OFF" },
   ])
