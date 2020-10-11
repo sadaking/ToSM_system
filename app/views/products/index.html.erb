@@ -54,12 +54,12 @@
       <div class="form-group col-sm-4">
         <%= form_with(url:products_path, local: true, method: :get) do |form| %>
           <%= form.label :title_search, class: "text-primary" do %>
-            <i class="fas fa-leaf"> 疾患から探す</i>
+            <i class="fas fa-disease">疾患から探す</i>
           <% end %><br/>
           <%= form.text_field :title ,class:"form-control"%><br/>
 
           <%= form.label :title_search, class: "text-primary" do %>
-            <i class="fas fa-leaf"> 会社から探す</i>
+            <i class="fas fa-building">会社から探す</i>
           <% end %><br/>
           <%= form.text_field :title ,class:"form-control"%><br/>
 
